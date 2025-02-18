@@ -76,7 +76,7 @@ do_compile() {
 
 do_install[noexec] = "1"
 
-BOOT_TOOLS = "imx-boot-tools"
+BOOT_TOOLS = "mas-boot-tools"
 
 addtask deploy after do_compile
 do_deploy() {
