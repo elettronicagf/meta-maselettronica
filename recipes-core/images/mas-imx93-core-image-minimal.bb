@@ -32,7 +32,6 @@ IMAGE_INSTALL += " \
     sudo \
     systemd-analyze \
     systemd-customapp-init \
-    test-mas \
     tree \
     u-boot-fw-utils \
     usbutils \
