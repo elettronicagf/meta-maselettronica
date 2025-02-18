@@ -7,6 +7,6 @@ This layer provides support for MAS Elettronica platforms for use with NXP layer
 
 # Download the BSP Repo
 
-repo init -u ssh://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/manifests/yocto-bsp-repo.git -b iMX93-NEI000X0-dev-ds -m imx93-nei000x0-6.6.52-dev
+repo init -u ssh://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/manifests/yocto-bsp-repo.git -b iMX93-NEI000X0-dev-ds -m imx93-nei000x0-6.6.52-dev.xml
   
 repo sync
