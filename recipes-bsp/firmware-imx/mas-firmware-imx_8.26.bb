@@ -4,7 +4,7 @@
 SUMMARY = "Freescale i.MX firmware"
 DESCRIPTION = "Freescale i.MX firmware such as for the VPU"
 
-require ${BP}.inc
+require mas-firmware-imx-${PV}.inc
 
 PE = "1"
 
