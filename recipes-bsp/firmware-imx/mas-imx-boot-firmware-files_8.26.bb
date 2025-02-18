@@ -1,7 +1,7 @@
 # Copyright (C) 2018-2024 NXP
 SUMMARY = "Freescale i.MX Firmware files used for boot"
 
-require firmware-imx-${PV}.inc
+require mas-firmware-imx-${PV}.inc
 
 inherit deploy nopackages
 
