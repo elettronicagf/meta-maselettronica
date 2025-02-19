@@ -654,6 +654,8 @@ WKS_FILE_DEPENDS:append:imx-generic-bsp:mx9-generic-bsp = " \
     ${@oe.utils.ifelse(d.getVar('UBOOT_PROVIDES_BOOT_CONTAINER') == '0', 'mas-boot', '')} \
 "
 
+WKS_FILE ?= "${SOC_DEFAULT_WKS_FILE}"
+
 KERNEL_IMAGETYPE = "zImage"
 KERNEL_IMAGETYPE:mx8-generic-bsp = "Image"
 KERNEL_IMAGETYPE:mx9-generic-bsp = "Image"
