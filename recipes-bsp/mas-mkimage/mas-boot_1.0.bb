@@ -19,12 +19,10 @@ DEPENDS += " \
 DEPENDS += "xxd-native"
 DEPENDS:append:mx8m-generic-bsp = " u-boot-mkimage-native dtc-native"
 DEPENDS:append:mx93-generic-bsp = " u-boot-mkimage-native dtc-native"
-BOOT_NAME = "mas-boot"
-PROVIDES = "${BOOT_NAME}"
 
 inherit deploy uuu_bootloader_tag
 
-UUU_BOOTLOADER = "${BOOT_NAME}"
+UUU_BOOTLOADER = "mas-boot"
 
 # Add CFLAGS with native INCDIR & LIBDIR for imx-mkimage build
 CFLAGS = "-O2 -Wall -std=c99 -I ${STAGING_INCDIR_NATIVE} -L ${STAGING_LIBDIR_NATIVE}"
@@ -222,7 +220,7 @@ do_compile() {
                     UBOOT_DTB_NAME_EXTRA="${dtb_name}"
                 fi
                 UBOOT_NAME_EXTRA="u-boot-${MACHINE}.bin-${UBOOT_CONFIG_EXTRA}"
-                BOOT_CONFIG_MACHINE_EXTRA="${BOOT_NAME}${BOOT_VARIANT}-${MACHINE}-${UBOOT_CONFIG_EXTRA}.bin"
+                BOOT_CONFIG_MACHINE_EXTRA="mas-boot${BOOT_VARIANT}-${MACHINE}-${UBOOT_CONFIG_EXTRA}.bin"
 
                 for target in ${IMXBOOT_TARGETS}; do
                     compile_${SOC_FAMILY}
@@ -380,7 +378,7 @@ do_deploy() {
     for type in ${UBOOT_CONFIG}; do
         UBOOT_CONFIG_EXTRA="$type"
         UBOOT_NAME_EXTRA="u-boot-${MACHINE}.bin-${UBOOT_CONFIG_EXTRA}"
-        BOOT_CONFIG_MACHINE_EXTRA="${BOOT_NAME}${BOOT_VARIANT}-${MACHINE}-${UBOOT_CONFIG_EXTRA}.bin"
+        BOOT_CONFIG_MACHINE_EXTRA="mas-boot${BOOT_VARIANT}-${MACHINE}-${UBOOT_CONFIG_EXTRA}.bin"
 
         if [ -e ${DEPLOY_DIR_IMAGE}/u-boot-spl.bin-${MACHINE}-${UBOOT_CONFIG_EXTRA} ] ; then
             install -m 0644 ${DEPLOY_DIR_IMAGE}/u-boot-spl.bin-${MACHINE}-${UBOOT_CONFIG_EXTRA} \
@@ -400,8 +398,8 @@ do_deploy() {
         done
 
         # The first UBOOT_CONFIG listed will be the imx-boot binary
-        if [ ! -f "${DEPLOYDIR}/${BOOT_NAME}" ]; then
-            ln -sf ${BOOT_CONFIG_MACHINE_EXTRA}-${IMAGE_IMXBOOT_TARGET} ${DEPLOYDIR}/${BOOT_NAME}
+        if [ ! -f "${DEPLOYDIR}/mas-boot" ]; then
+            ln -sf ${BOOT_CONFIG_MACHINE_EXTRA}-${IMAGE_IMXBOOT_TARGET} ${DEPLOYDIR}/mas-boot
         else
             bbwarn "Use custom wks.in for $UBOOT_CONFIG = $type"
         fi
