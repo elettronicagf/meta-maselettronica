@@ -271,7 +271,7 @@ do_install () {
         bbnote "UBOOT_CONFIG = $type"
 
         UBOOT_CONFIG_EXTRA="$type"
-        BOOT_CONFIG_MACHINE_EXTRA="${BOOT_NAME}${BOOT_VARIANT}-${MACHINE}-${UBOOT_CONFIG_EXTRA}.bin"
+        BOOT_CONFIG_MACHINE_EXTRA="mas-boot${BOOT_VARIANT}-${MACHINE}-${UBOOT_CONFIG_EXTRA}.bin"
 
         for target in ${IMXBOOT_TARGETS}; do
             install -m 0644 ${S}/${BOOT_CONFIG_MACHINE_EXTRA}-${target} ${D}/boot/
