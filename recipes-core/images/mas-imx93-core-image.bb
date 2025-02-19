@@ -6,9 +6,11 @@ require recipes-core/images/mas-imx93-core-image-minimal.bb
 
 IMAGE_FEATURES += " \
 	ssh-server-openssh \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston', \
-       bb.utils.contains('DISTRO_FEATURES',     'x11', 'x11-base x11-sato', \
-                                                       '', d), d)} \
+"
+
+CORE_IMAGE_EXTRA_INSTALL += " \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'x11 wayland', 'weston-xwayland xterm', '', d)} \
 "
 
 APPLICATIONS = "\
@@ -50,7 +52,7 @@ MAS-TOOLS = " \
 "
 
 IMAGE_INSTALL += " \
-	${@bb.utils.contains('DISTRO_FEATURES', 'x11 wayland', 'weston-xwayland xterm', '', d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init-mas-config', '', d)} \
 	${MAS-TOOLS} \
 	${NETWORK_KIT} \
 	${STRESS_TOOLS} \
