@@ -6,6 +6,7 @@ require recipes-core/images/mas-imx93-core-image-minimal.bb
 
 IMAGE_FEATURES += " \
 	ssh-server-openssh \
+	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston','', d)} \
 "
 
 CORE_IMAGE_EXTRA_INSTALL += " \
