@@ -20,7 +20,7 @@ DEPENDS += "xxd-native"
 DEPENDS:append:mx8m-generic-bsp = " u-boot-mkimage-native dtc-native"
 DEPENDS:append:mx93-generic-bsp = " u-boot-mkimage-native dtc-native"
 
-inherit deploy uuu_bootloader_tag
+inherit deploy mas_uuu_bootloader_tag
 
 UUU_BOOTLOADER = "mas-boot"
 
