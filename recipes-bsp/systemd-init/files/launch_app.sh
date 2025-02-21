@@ -26,7 +26,7 @@ echo -e "         Finished \033[1mCUSTOM Application\033[0m: set the System Time
 sync
 
 # enable gpio watchdog
-#/home/root/test-mas/wdtgpioset on > $STDOUT
+#/root/test-mas/wdtgpioset on > $STDOUT
 #echo -e "         Finished \033[1mCUSTOM Application\033[0m: enabled gpio Watchdog." > $STDOUT
 
 # generate ssh-keys if necessary
@@ -38,7 +38,7 @@ if [[ ! -z `mount | grep "on / type ext4 (ro,"` ]]; then
 	count=`ls -1 *.pub 2>/dev/null | wc -l`
 	
 	if [ $count == 0 ]; then 
-		/home/root/test-mas/create_sshkeys > $STDOUT
+		/root/test-mas/create_sshkeys > $STDOUT
 		echo -e "         Finished \033[1mCUSTOM Application\033[0m: SSH Keys generated." > $STDOUT
 	fi 
 	

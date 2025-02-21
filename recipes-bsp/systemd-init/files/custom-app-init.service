@@ -3,7 +3,7 @@ Description = Launch CUSTOM Application
 After = network.target
 
 [Service]
-ExecStart = /home/root/launch_app.sh &
+ExecStart = /root/launch_app.sh &
 
 [Install]
 WantedBy = multi-user.target

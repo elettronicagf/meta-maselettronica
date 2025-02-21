@@ -10,16 +10,16 @@ SRCREV = "8f02340de8a4ec2e953c5852086ba2693f7899be"
 S = "${WORKDIR}/git"
 
 do_install() {
-    install -d -m 0755 ${D}/home/root/
+    install -d -m 0755 ${D}/root/
     install -d ${D}/${sysconfdir}/
     install -d ${D}/${sysconfdir}/systemd/network/
-    install -m 0644 ${S}/bashrc ${D}/home/root/.bashrc
-    install -m 0644 ${S}/profile ${D}/home/root/.profile
+    install -m 0644 ${S}/bashrc ${D}/root/.bashrc
+    install -m 0644 ${S}/profile ${D}/root/.profile
     install -m 0644 ${S}/20-wired.network ${D}/${sysconfdir}/systemd/network/20-wired.network
     install -m 0644 ${S}/21-wired.network ${D}/${sysconfdir}/systemd/network/21-wired.network
     install -m 0644 ${S}/udhcp.conf ${D}/${sysconfdir}/udhcp.conf
     
 }
 
-FILES:${PN} += "/home/root/.bashrc /home/root/.profile ${sysconfdir}"
+FILES:${PN} += "/root/.bashrc /root/.profile ${sysconfdir}"
 

@@ -13,10 +13,10 @@ inherit systemd
 SYSTEMD_SERVICE:${PN} = "custom-app-init.service"
 
 do_install() {
-	install -d -m 0755 ${D}/home/root/
+	install -d -m 0755 ${D}/root/
 	install -d ${D}${systemd_unitdir}/system
 	install -m 0644 ${WORKDIR}/custom-app-init.service ${D}${systemd_unitdir}/system/
-	install -m 0755 ${WORKDIR}/*.sh ${D}/home/root/
+	install -m 0755 ${WORKDIR}/*.sh ${D}/root/
 }
 
-FILES:${PN} += "/home/root/launch_app.sh "
+FILES:${PN} += "/root/launch_app.sh "

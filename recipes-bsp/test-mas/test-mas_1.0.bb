@@ -14,10 +14,10 @@ TEST_DIR = "test-mas"
 RDEPENDS:${PN} += "bash"
 
 do_install() {
-    install -d -m 0755 ${D}/home/root/
-    install -d -m 0755 ${D}/home/root/${TEST_DIR}
-    cp -rp ${S}/* ${D}/home/root/${TEST_DIR}/
-    chown -R root:root ${D}/home/root/${TEST_DIR}/
+    install -d -m 0755 ${D}/root/
+    install -d -m 0755 ${D}/root/${TEST_DIR}
+    cp -rp ${S}/* ${D}/root/${TEST_DIR}/
+    chown -R root:root ${D}/root/${TEST_DIR}/
 }
 
-FILES:${PN} += "/home/root/${TEST_DIR}"
+FILES:${PN} += "/root/${TEST_DIR}"
