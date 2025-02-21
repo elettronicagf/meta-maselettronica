@@ -27,6 +27,7 @@ IMAGE_INSTALL += " \
     mas-home-config \
     mmc-utils \
     nano \
+    ncurses \
     net-tools \
     spitools \
     sudo \
