@@ -139,8 +139,8 @@ else
 fi
 
 echo >> conf/local.conf
-echo "# Switch to Debian packaging and include package-management in the image" >> conf/local.conf
-echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
+echo "# Switch to RPM packaging and include package-management in the image" >> conf/local.conf
+echo "PACKAGE_CLASSES = \"package_rpm\"" >> conf/local.conf
 echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 
 if [ ! -e $BUILD_DIR/conf/bblayers.conf.org ]; then
@@ -149,6 +149,9 @@ else
     cp $BUILD_DIR/conf/bblayers.conf.org $BUILD_DIR/conf/bblayers.conf
 fi
 
+echo " " >> $BUILD_DIR/conf/local.conf
+echo "BB_NUMBER_THREADS = \"4\"" >> $BUILD_DIR/conf/local.conf
+echo "PARALLEL_MAKE = \"-j 4\"" >> $BUILD_DIR/conf/local.conf
 
 META_FSL_BSP_RELEASE="${CWD}/sources/meta-imx/meta-imx-bsp"
 
