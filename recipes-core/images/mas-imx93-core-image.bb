@@ -16,9 +16,11 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 
 APPLICATIONS = "\
 	firmwared \
+	media-ctl \
     packagegroup-fsl-gstreamer1.0 \
     packagegroup-fsl-gstreamer1.0-full \
     packagegroup-imx-isp \
+    v4l-utils \
 "
 
 BENCHMARKS = "\
