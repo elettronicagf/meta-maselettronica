@@ -15,6 +15,10 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 "
 
 APPLICATIONS = "\
+	firmwared \
+    packagegroup-fsl-gstreamer1.0 \
+    packagegroup-fsl-gstreamer1.0-full \
+    packagegroup-imx-isp \
 "
 
 BENCHMARKS = "\
@@ -58,6 +62,7 @@ MAS-TOOLS = " \
 
 IMAGE_INSTALL += " \
 	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init-mas-config', '', d)} \
+	${APPLICATIONS} \
 	${BENCHMARKS} \
 	${MAS-TOOLS} \
 	${NETWORK_KIT} \
