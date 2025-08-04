@@ -16,6 +16,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 
 APPLICATIONS = "\
 	firmwared \
+	imx-g2d-samples \
 	media-ctl \
     packagegroup-fsl-gstreamer1.0 \
     packagegroup-fsl-gstreamer1.0-full \
