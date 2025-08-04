@@ -9,10 +9,10 @@ SRC_URI += "file://ap1302.fw"
 
 
 do_install:append () {
-	install -d ${D}/${libdir}/firmware/imx/camera
-	install -m 0755 ${WORKDIR}/ap1302.fw ${D}/lib/firmware/imx/camera/
+	install -d ${D}${base_libdir}/firmware/imx/camera
+	install -m 0755 ${WORKDIR}/ap1302.fw ${D}${nonarch_base_libdir}/firmware/imx/camera/
 }
 
 # NOTE: Use "=+" instead of "+=". Otherwise, the file is placed into the linux-firmware package.
 PACKAGES =+ "${PN}-camera"
-FILES:${PN}-camera = "/lib/firmware/imx/camera/ap1302.fw"
+FILES:${PN}-camera = "${nonarch_base_libdir}/firmware/imx/camera/ap1302.fw"
