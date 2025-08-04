@@ -15,13 +15,6 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 "
 
 APPLICATIONS = "\
-	firmwared \
-	imx-g2d-samples \
-	media-ctl \
-    packagegroup-fsl-gstreamer1.0 \
-    packagegroup-fsl-gstreamer1.0-full \
-    packagegroup-imx-isp \
-    v4l-utils \
 "
 
 BENCHMARKS = "\
@@ -29,6 +22,17 @@ BENCHMARKS = "\
 "
 
 LIBRARIES = "\
+"
+
+MULTIMEDIA = "\
+	firmwared \
+	imx-g2d-samples \
+	linux-firmware-camera \
+	media-ctl \
+    packagegroup-fsl-gstreamer1.0 \
+    packagegroup-fsl-gstreamer1.0-full \
+    packagegroup-imx-isp \
+    v4l-utils \
 "
 
 NETWORK_KIT = " \
@@ -65,9 +69,9 @@ MAS-TOOLS = " \
 
 IMAGE_INSTALL += " \
 	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init-mas-config', '', d)} \
-	${APPLICATIONS} \
 	${BENCHMARKS} \
 	${MAS-TOOLS} \
+	${MULTIMEDIA} \
 	${NETWORK_KIT} \
 	${STRESS_TOOLS} \
 "
