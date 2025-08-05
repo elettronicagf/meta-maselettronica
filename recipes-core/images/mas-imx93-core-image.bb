@@ -4,6 +4,8 @@ DESCRIPTION = "This is the main core image for MAS NEITH000X systems"
 
 require recipes-core/images/mas-imx93-core-image-minimal.bb
 
+TOOLCHAIN_HOST_TASK:append = " lvgl"
+
 IMAGE_FEATURES += " \
 	ssh-server-openssh \
 	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston','', d)} \
@@ -22,6 +24,7 @@ BENCHMARKS = "\
 "
 
 LIBRARIES = "\
+	lvgl \
 "
 
 MULTIMEDIA = "\
@@ -70,6 +73,7 @@ MAS-TOOLS = " \
 IMAGE_INSTALL += " \
 	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init-mas-config', '', d)} \
 	${BENCHMARKS} \
+	${LIBRARIES} \
 	${MAS-TOOLS} \
 	${MULTIMEDIA} \
 	${NETWORK_KIT} \
