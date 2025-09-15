@@ -68,6 +68,7 @@ MAS-TOOLS = " \
 	dpkg \
 	evtest \
 	hdparm \
+	spidev-test \
 "
 
 IMAGE_INSTALL += " \
