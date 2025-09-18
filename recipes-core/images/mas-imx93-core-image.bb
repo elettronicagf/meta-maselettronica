@@ -17,6 +17,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 "
 
 APPLICATIONS = "\
+	udev \
 	udev-extraconf \
 "
 
@@ -74,6 +75,7 @@ MAS-TOOLS = " \
 
 IMAGE_INSTALL += " \
 	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston-init-mas-config', '', d)} \
+	${APPLICATIONS} \
 	${BENCHMARKS} \
 	${LIBRARIES} \
 	${MAS-TOOLS} \
