@@ -17,6 +17,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 "
 
 APPLICATIONS = "\
+	udev-extraconf \
 "
 
 BENCHMARKS = "\
