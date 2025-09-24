@@ -27,6 +27,9 @@ BENCHMARKS = "\
 
 LIBRARIES = "\
 	lvgl \
+	python3 \
+	python3-pygobject \
+	python3-pyserial \
 "
 
 MULTIMEDIA = "\
@@ -42,6 +45,7 @@ MULTIMEDIA = "\
 
 NETWORK_KIT = " \
 	ethtool \
+	iperf3 \
 	nginx \
 	phytool \
 "
