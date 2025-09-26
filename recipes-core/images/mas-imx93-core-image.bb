@@ -26,7 +26,6 @@ BENCHMARKS = "\
 "
 
 LIBRARIES = "\
-	lvgl \
 	python3 \
 	python3-pygobject \
 	python3-pyserial \
