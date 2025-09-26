@@ -1,3 +1,5 @@
-require u-boot-mas-imx-common_${PV}.inc
+FILESEXTRAPATHS:prepend := "${THISDIR}:"
+
+require u-boot-mas-imx-common_2024.04.inc
 
 
