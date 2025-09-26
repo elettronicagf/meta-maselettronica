@@ -4,7 +4,6 @@ DESCRIPTION = "This is the main core image for MAS NEITH000X systems"
 
 require recipes-core/images/mas-imx93-core-image-minimal.bb
 
-TOOLCHAIN_HOST_TASK:append = " lvgl"
 
 IMAGE_FEATURES += " \
 	ssh-server-openssh \
