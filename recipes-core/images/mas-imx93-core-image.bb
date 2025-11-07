@@ -72,6 +72,7 @@ MAS-TOOLS = " \
 	dpkg \
 	evtest \
 	hdparm \
+	imx-test \
 	spidev-test \
 "
 
