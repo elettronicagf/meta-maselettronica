@@ -88,3 +88,11 @@ IMAGE_INSTALL += " \
 "
 
 export IMAGE_BASENAME = "mas-imx93-core-image"
+
+addtask custom after do_rootfs before do_image
+do_custom () {
+	if [ -f /root/profile_bkp ]; then
+		cat /root/profile_bkp >> /root/.profile
+		rm /root/profile_bkp
+	fi
+}
