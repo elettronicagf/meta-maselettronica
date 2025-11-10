@@ -14,12 +14,12 @@ do_install() {
     install -d ${D}/${sysconfdir}/
     install -d ${D}/${sysconfdir}/systemd/network/
     install -m 0644 ${S}/bashrc ${D}/root/.bashrc
-    install -m 0644 ${S}/profile ${D}/root/.profile
+    install -m 0644 ${S}/profile ${D}/root/profile_bkp
     install -m 0644 ${S}/20-wired.network ${D}/${sysconfdir}/systemd/network/20-wired.network
     install -m 0644 ${S}/21-wired.network ${D}/${sysconfdir}/systemd/network/21-wired.network
     install -m 0644 ${S}/udhcp.conf ${D}/${sysconfdir}/udhcp.conf
     
 }
 
-FILES:${PN} += "/root/.bashrc /root/.profile ${sysconfdir}"
+FILES:${PN} += "/root/.bashrc /root/profile_bkp ${sysconfdir}"
 
