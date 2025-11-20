@@ -73,6 +73,7 @@ MAS-TOOLS = " \
 	evtest \
 	hdparm \
 	imx-test \
+	procps \
 	spidev-test \
 "
 
