@@ -16,7 +16,7 @@
 #
 part u-boot --source rawcopy	--sourceparams="file=mas-boot" --ondisk mmcblk --no-table --align 32
 part / 		--source rootfs 	--ondisk mmcblk --fstype=ext4 --label root --align 8192 --fixed-size 2678M
-part / 							--ondisk mmcblk --fstype=ext4 --label part2 			--fixed-size 500M --grow
+part / 							--ondisk mmcblk --fstype=ext4 --label part2 			--fixed-size 600M
 
 bootloader --ptable msdos
 
