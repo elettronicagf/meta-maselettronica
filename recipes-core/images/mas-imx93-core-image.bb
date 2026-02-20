@@ -21,6 +21,7 @@ APPLICATIONS = "\
 "
 
 BENCHMARKS = "\
+	fio \
 	lmbench \
 "
 
