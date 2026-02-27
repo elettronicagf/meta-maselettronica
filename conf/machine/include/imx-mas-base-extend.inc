@@ -62,7 +62,7 @@ MACHINEOVERRIDES_EXTENDER:mx91:use-nxp-bsp  = "imx-generic-bsp:imx-nxp-bsp:imxdr
 MACHINEOVERRIDES_EXTENDER:mx91:use-mainline-bsp  = "imx-generic-bsp:imx-mainline-bsp:mx9-generic-bsp:mx9-mainline-bsp:mx91-generic-bsp:mx91-mainline-bsp"
 MACHINEOVERRIDES_EXTENDER_FILTER_OUT += "mx91"
 MACHINE_SOCARCH_SUFFIX:mx91-nxp-bsp = "-mx91"
-IMX_EXTRA_FIRMWARE:mx91-nxp-bsp = "imx-boot-firmware-files firmware-ele-imx"
+IMX_EXTRA_FIRMWARE:mx91-nxp-bsp = "mas-imx-boot-firmware-files mas-firmware-ele-imx"
 
 # Add new variabe for ELE extra Firmware
 SECOEXT_FIRMWARE_NAME ?= "UNDEFINED"
