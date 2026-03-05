@@ -15,7 +15,7 @@ ATF_PLATFORM = "imx91"
 
 IMXBOOT_TARGETS = "flash_singleboot"
 
-IMX_BOOT_SOC_TARGET = "iMX9"
+IMX_BOOT_SOC_TARGET = "iMX91"
 IMX_BOOT_SEEK = "32"
 
 # We have to disable SERIAL_CONSOLE due to auto-serial-console
