@@ -44,7 +44,6 @@ MULTIMEDIA = "\
 NETWORK_KIT = " \
 	ethtool \
 	iperf3 \
-	nginx \
 	phytool \
 "
 
