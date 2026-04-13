@@ -6,7 +6,7 @@ STDOUT="/dev/ttyLP0"
 
 # update system clock to hwclock
 hwclock --hctosys -f /dev/rtc0
-echo -e "         Finished \033[1mCUSTOM Application\033[0m: set the System Time from the hwclock." > $STDOUT
+#echo -e "         Finished \033[1mCUSTOM Application\033[0m: set the System Time from the hwclock." > $STDOUT
 
 #echo ">> " > $STDOUT
 
