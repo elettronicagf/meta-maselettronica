@@ -25,3 +25,4 @@ IMX_DEFAULT_BSP = "nxp"
 
 MACHINE_FEATURES = "usbgadget usbhost vfat touchscreen"
 MACHINE_FEATURES:append:use-nxp-bsp = " optee jailhouse"
+MACHINE_FEATURES:remove = " bluetooth"
