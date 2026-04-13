@@ -81,4 +81,4 @@ IMAGE_INSTALL += " \
 	${STRESS_TOOLS} \
 "
 
-export IMAGE_BASENAME = "mas-imx93-core-image"
+export IMAGE_BASENAME = "mas-imx93-ailux-test-image"
