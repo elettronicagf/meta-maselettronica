@@ -2,7 +2,7 @@
  
 DEPENDS = "zlib-native openssl-native"
 
-MAS_MKIMAGE_SRC = "git://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/bsp/bootloader/imx-mkimage.git;protocol=ssh"
+MAS_MKIMAGE_SRC = "git:///home/repo-shared/bsp/bootloader/imx-mkimage.git;protocol=file"
 SRCBRANCH = "${MASMKIMAGE_SRCBRANCH}"
 SRCREV = "${MASMKIMAGE_SRCREV}"
 
