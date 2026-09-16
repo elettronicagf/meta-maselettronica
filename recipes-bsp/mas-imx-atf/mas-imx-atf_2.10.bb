@@ -9,7 +9,7 @@ PV .= "+git${SRCPV}"
 
 SRC_URI = "${ATF_SRC};branch=${SRCBRANCH}"
 ATF_SRC ?= "git:///home/repo-shared/bsp/bootloader/imx-atf.git;protocol=file"
-SRCBRANCH = "iMX93-NEITH-scarthgap"
+SRCBRANCH = "iMX9-OSM-scarthgap"
 SRCREV = "1b27ee3edbb40ef9432c69ccaa744d1ac5d54c5d"
 
 S = "${WORKDIR}/git"
