@@ -2,7 +2,7 @@ SUMMARY = "MAS home configuration"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.md;md5=d41d8cd98f00b204e9800998ecf8427e"
 
-SRC_BRANCH = "iMX9-NEITH-scarthgap"
+SRC_BRANCH = "iMX9-OSM-scarthgap"
 REPO_SRC = "git:///home/repo-shared/bsp/config/mas-home-config.git;protocol=file"
 SRC_URI = "${REPO_SRC};branch=${SRC_BRANCH}"
 SRCREV = "46608499faf7fc380be9800b695ed889abd4f930"
