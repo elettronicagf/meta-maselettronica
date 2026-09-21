@@ -8,7 +8,10 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=ca53281cc0caa7e320d4945a896fb837"
 inherit use-imx-security-controller-firmware deploy
 
 FIRMWARE_ELE_SRCBRANCH = "iMX9-OSM-scarthgap"
+
 SRC_URI = "git:///home/repo-shared/bsp/bootloader/firmware-ele.git;protocol=file;branch=${FIRMWARE_ELE_SRCBRANCH}"
+SRC_URI:egf-remote = "git://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/bsp/bootloader/firmware-ele.git;protocol=ssh;branch=${FIRMWARE_ELE_SRCBRANCH}"
+
 SRCREV = "82b6b752a743ee7f2cd4f5cb625bd08278f832a8"
 
 S = "${WORKDIR}/git/firmware-ele-imx-${PV}"
