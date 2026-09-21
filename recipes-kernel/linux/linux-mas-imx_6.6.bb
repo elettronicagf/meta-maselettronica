@@ -17,7 +17,10 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 KERNELSRCBRANCH = "${KERNEL_SRCBRANCH}"
 KBRANCH = "${KERNELSRCBRANCH}"
-LINUX_IMX_SRC ?= "git:///home/repo-shared/bsp/kernel/linux-imx.git;protocol=file;branch=${KERNELSRCBRANCH}"
+
+LINUX_IMX_SRC = "git:///home/repo-shared/bsp/kernel/linux-imx.git;protocol=file;branch=${KERNELSRCBRANCH}"
+LINUX_IMX_SRC:egf-remote = "git://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/bsp/kernel/linux-imx.git;protocol=ssh;branch=${KERNELSRCBRANCH}"
+
 LOCALVERSION = "-${KERNELSRCBRANCH}"
 SRCREV = "${KERNEL_SRCREV}"
 SRC_URI = "${LINUX_IMX_SRC}"
