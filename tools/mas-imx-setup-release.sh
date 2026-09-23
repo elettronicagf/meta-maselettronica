@@ -177,6 +177,13 @@ echo " " >> $BUILD_DIR/conf/local.conf
 echo "BASE_URL = \"$BASE_URL\"" >> $BUILD_DIR/conf/local.conf
 echo "BASE_PROTOCOL = \"$BASE_PROTOCOL\"" >> $BUILD_DIR/conf/local.conf
 
+echo " " >> $BUILD_DIR/conf/local.conf
+echo "# Enable the buildinfo feature" >> $BUILD_DIR/conf/local.conf
+echo "INHERIT += \"image-buildinfo\"" >> $BUILD_DIR/conf/local.conf
+echo "IMAGE_BUILDINFO_VARS:append = \" DATETIME DISTRO_NAME IMAGE_BASENAME MACHINE TUNE_PKGARCH\"" >> $BUILD_DIR/conf/local.conf
+echo "IMAGE_BUILDINFO_VARS:append = \" MACHINE_FEATURES DISTRO_FEATURES COMMON_FEATURES IMAGE_FEATURES\"" >> $BUILD_DIR/conf/local.conf
+echo "IMAGE_BUILDINFO_VARS:append = \" TUNE_FEATURES TARGET_FPU\"" >> $BUILD_DIR/conf/local.conf
+
 
 META_FSL_BSP_RELEASE="${CWD}/sources/meta-imx/meta-imx-bsp"
 
