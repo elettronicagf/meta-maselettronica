@@ -2,13 +2,10 @@
  
 DEPENDS = "zlib-native openssl-native"
 
-MAS_MKIMAGE_SRC = "git:///home/repo-shared/bsp/bootloader/imx-mkimage.git;protocol=file"
-MAS_MKIMAGE_SRC:egf-remote = "git://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/bsp/bootloader/imx-mkimage.git;protocol=ssh"
-
 SRCBRANCH = "${MASMKIMAGE_SRCBRANCH}"
 SRCREV = "${MASMKIMAGE_SRCREV}"
 
-SRC_URI = "${MAS_MKIMAGE_SRC};branch=${SRCBRANCH} \
+SRC_URI = "${BASE_URL}/repo-shared/bsp/bootloader/imx-mkimage.git;${BASE_PROTOCOL};branch=${SRCBRANCH} \
            file://0001-iMX8M-soc.mak-use-native-mkimage-from-sysroot.patch \
 "
 
