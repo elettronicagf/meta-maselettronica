@@ -94,8 +94,28 @@ fi
 
 if [ -z "$MACHINE" ]; then
     echo setting to default machine
-    MACHINE='imx93-nei000x0-usd'
+    MACHINE='imx93-jfn0937-aa06aa0-usd'
 fi
+
+# set the url
+if [ -z "$BASEURL" ]; then
+    echo setting to remote url
+    BASE_URL='git://git@gitrepo.egf.it/egf/egf-pd'
+    BASE_PROTOCOL='protocol=ssh'
+elif [ "$BASEURL" == "local" ]; then
+	echo setting to local url
+	BASE_URL='git:///home'
+	BASE_PROTOCOL='protocol=file'
+elif [ "$BASEURL" == "remote" ]; then
+    echo setting to remote url
+    BASE_URL='git://git@gitrepo.egf.it/egf/egf-pd'
+    BASE_PROTOCOL='protocol=ssh'
+else
+    echo setting to remote url
+    BASE_PROTOCOL='git://git@gitrepo.egf.it/egf/egf-pd'
+    BASE_PROTOCOL='protocol=ssh'
+fi
+
 
 case $MACHINE in
 imx6*|imx7*)
@@ -152,6 +172,11 @@ fi
 echo " " >> $BUILD_DIR/conf/local.conf
 echo "BB_NUMBER_THREADS = \"4\"" >> $BUILD_DIR/conf/local.conf
 echo "PARALLEL_MAKE = \"-j 4\"" >> $BUILD_DIR/conf/local.conf
+
+echo " " >> $BUILD_DIR/conf/local.conf
+echo "BASE_URL = \"$BASE_URL\"" >> $BUILD_DIR/conf/local.conf
+echo "BASE_PROTOCOL = \"$BASE_PROTOCOL\"" >> $BUILD_DIR/conf/local.conf
+
 
 META_FSL_BSP_RELEASE="${CWD}/sources/meta-imx/meta-imx-bsp"
 
