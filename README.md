@@ -5,8 +5,14 @@ Welcome to `meta-maselettronica`. This document outlines our commitment to provi
 This layer provides support for MAS Elettronica platforms for use with NXP layers, OpenEmbedded and/or Yocto Project.
 
 
-# Download the BSP Repo
+# Download the BSP Repo [for LOCAL builds]
 
-repo init -u ssh://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/manifests/yocto-bsp-repo.git -b iMX93-NEI000X0-dev-ds -m imx93-nei000x0-6.6.52-dev.xml
-  
+repo init -u /home/repo-shared/manifests/yocto-manifests.git -b iMX9-OSM-6.6.y-scarthgap -m imx9-osm-6.6.y-local.xml 
+repo sync 
+
+
+# Download the BSP Repo [for REMOTE builds] 
+
+repo init -u git@gitrepo.egf.it:egf/egf-pd/repo-shared/manifests/yocto-manifests.git -b iMX9-OSM-6.6.y-scarthgap -m imx9-osm-6.6.y-remote.xml 
 repo sync
+
