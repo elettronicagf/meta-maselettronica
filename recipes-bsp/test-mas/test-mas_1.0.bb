@@ -4,11 +4,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=d41d8cd98f00b204e9800998ecf8427e"
 
 SRC_BRANCH = "${MASTESTSUITE_SRCBRANCH}"
 SRCREV = "${MASTESTSUITE_SRCREV}"
-
-REPO_SRC = "git:///home/repo-shared/tests/test-suite.git;protocol=file"
-REPO_SRC:egf-remote = "git://git@git.maselettronica.com:22222/maselettronica/yocto/products/sbc/bsp/packages/test-mas.git;protocol=ssh"
-
-SRC_URI = "${REPO_SRC};branch=${SRC_BRANCH}"
+SRC_URI = "${BASE_URL}/repo-shared/tests/test-suite.git;${BASE_PROTOCOL};branch=${SRC_BRANCH}"
 
 S = "${WORKDIR}/git"
 
