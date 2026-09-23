@@ -170,10 +170,12 @@ else
 fi
 
 echo " " >> $BUILD_DIR/conf/local.conf
+echo "# Set the max compiling resources"
 echo "BB_NUMBER_THREADS = \"4\"" >> $BUILD_DIR/conf/local.conf
 echo "PARALLEL_MAKE = \"-j 4\"" >> $BUILD_DIR/conf/local.conf
 
 echo " " >> $BUILD_DIR/conf/local.conf
+echo "# Set the base repo URL for internal repositories" >> $BUILD_DIR/conf/local.conf
 echo "BASE_URL = \"$BASE_URL\"" >> $BUILD_DIR/conf/local.conf
 echo "BASE_PROTOCOL = \"$BASE_PROTOCOL\"" >> $BUILD_DIR/conf/local.conf
 
