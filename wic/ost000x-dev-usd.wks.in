@@ -14,7 +14,7 @@
 #	|		 8MiB           3.5GB
 #	${IMX_BOOT_SEEK} 32 or 33kiB, see reference manual
 #
-part u-boot --source rawcopy	--sourceparams="file=mas-boot" --ondisk mmcblk --no-table --align 32
+part u-boot --source rawcopy	--sourceparams="file=imx-boot" --ondisk mmcblk --no-table --align 32
 part / 		--source rootfs 	--ondisk mmcblk --fstype=ext4 --label root --align 8192 --fixed-size 2678M
 part / 							--ondisk mmcblk --fstype=ext4 --label part2 			--fixed-size 600M
 
