@@ -23,7 +23,7 @@ IMAGE_INSTALL += " \
     libgpiod \
     libgpiod-tools \
     libubootenv \
-    mas-boot \
+    imx-boot \
     mas-home-config \
     mmc-utils \
     nano \
