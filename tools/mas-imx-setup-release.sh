@@ -99,9 +99,10 @@ fi
 
 # set the url
 if [ -z "$BASEURL" ]; then
-    echo setting to remote url
-    BASE_URL='git://git@gitrepo.egf.it/egf/egf-pd'
-    BASE_PROTOCOL='protocol=ssh'
+    echo setting to remote github url
+    BASE_URL='git:///home'
+    BASE_PROTOCOL='protocol=file'
+    SETOVERRIDE='egfgithub'
 elif [ "$BASEURL" == "local" ]; then
 	echo setting to local url
 	BASE_URL='git:///home'
