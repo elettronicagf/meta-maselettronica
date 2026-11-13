@@ -111,9 +111,10 @@ elif [ "$BASEURL" == "remote" ]; then
     BASE_URL='git://git@gitrepo.egf.it/egf/egf-pd'
     BASE_PROTOCOL='protocol=ssh'
 else
-    echo setting to remote url
-    BASE_PROTOCOL='git://git@gitrepo.egf.it/egf/egf-pd'
-    BASE_PROTOCOL='protocol=ssh'
+    echo setting to remote github url
+    BASE_PROTOCOL='git:///home'
+    BASE_PROTOCOL='protocol=file'
+    SETOVERRIDE='egfgithub'
 fi
 
 
@@ -176,6 +177,11 @@ echo "PARALLEL_MAKE = \"-j 4\"" >> $BUILD_DIR/conf/local.conf
 
 echo " " >> $BUILD_DIR/conf/local.conf
 echo "# Set the base repo URL for internal repositories" >> $BUILD_DIR/conf/local.conf
+
+if [ -n "$SETOVERRIDE" ]; then
+    echo "MACHINEOVERRIDES =. \"$SETOVERRIDE \"" >> $BUILD_DIR/conf/local.conf
+fi
+
 echo "BASE_URL = \"$BASE_URL\"" >> $BUILD_DIR/conf/local.conf
 echo "BASE_PROTOCOL = \"$BASE_PROTOCOL\"" >> $BUILD_DIR/conf/local.conf
 
