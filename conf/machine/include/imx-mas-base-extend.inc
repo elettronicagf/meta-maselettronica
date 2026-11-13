@@ -25,7 +25,7 @@ IMX_EXTRA_FIRMWARE:mx8ulp-generic-bsp = "firmware-upower firmware-ele-imx"
 
 # Update i.MX 93
 IMX_SOC_REV:mx93-generic-bsp  ?= "A1"
-IMX_EXTRA_FIRMWARE:mx93-generic-bsp = "mas-imx-boot-firmware-files mas-firmware-ele-imx"
+IMX_EXTRA_FIRMWARE:mx93-generic-bsp = "imx-boot-firmware-files firmware-ele-imx"
 #UBOOT_DTB_NAME:mx93-generic-bsp = ""
 
 # Add new SoC i.MX 95
