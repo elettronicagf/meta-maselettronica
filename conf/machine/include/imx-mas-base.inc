@@ -104,7 +104,8 @@ UBOOT_PROVIDES_BOOT_CONTAINER = "0"
 # The boot container should be used only if we're not using u-boot-imx as
 # IMX_DEFAULT_BOOTLOADER.
 #UBOOT_PROVIDES_BOOT_CONTAINER:mx8m-generic-bsp = "${@oe.utils.ifelse(d.getVar('IMX_DEFAULT_BOOTLOADER') == 'u-boot-imx', '0', '1')}"
-UBOOT_PROVIDES_BOOT_CONTAINER:mas-boot-container = "1"
+#UBOOT_PROVIDES_BOOT_CONTAINER:mas-boot-container = "1"
+UBOOT_PROVIDES_BOOT_CONTAINER = "0"
 
 # Trusted Firmware for Cortex-A (TF-A) can have different providers, either
 # from upstream or from NXP downstream fork. Below variable defines which TF-A
@@ -400,7 +401,7 @@ IMX_EXTRA_FIRMWARE:mx8-generic-bsp    		= "imx-boot-firmware-files imx-sc-firmwa
 IMX_EXTRA_FIRMWARE:mx8m-generic-bsp   		= "imx-boot-firmware-files"
 IMX_EXTRA_FIRMWARE:mx8x-generic-bsp   		= "imx-sc-firmware imx-seco"
 IMX_EXTRA_FIRMWARE:mx8ulp-generic-bsp 		= "firmware-upower firmware-ele-imx"
-IMX_EXTRA_FIRMWARE:mx93-generic-bsp   		= "mas-boot-firmware-files mas-firmware-ele-imx"
+IMX_EXTRA_FIRMWARE:mx93-generic-bsp   		= "imx-boot-firmware-files firmware-ele-imx"
 
 # Firmware
 MACHINE_FIRMWARE ?= ""
@@ -648,10 +649,10 @@ WKS_FILE_DEPENDS ?= " \
 # NOTE: the results binary name of the boot container is set to 'mas-boot'
 # for both NXP and Mainline BSP.
 WKS_FILE_DEPENDS:append:imx-generic-bsp:mx8-generic-bsp = " \
-    ${@oe.utils.ifelse(d.getVar('UBOOT_PROVIDES_BOOT_CONTAINER') == '0', 'mas-boot', '')} \
+    ${@oe.utils.ifelse(d.getVar('UBOOT_PROVIDES_BOOT_CONTAINER') == '0', 'imx-boot', '')} \
 "
 WKS_FILE_DEPENDS:append:imx-generic-bsp:mx9-generic-bsp = " \
-    ${@oe.utils.ifelse(d.getVar('UBOOT_PROVIDES_BOOT_CONTAINER') == '0', 'mas-boot', '')} \
+    ${@oe.utils.ifelse(d.getVar('UBOOT_PROVIDES_BOOT_CONTAINER') == '0', 'imx-boot', '')} \
 "
 
 WKS_FILE ?= "${SOC_DEFAULT_WKS_FILE}"
