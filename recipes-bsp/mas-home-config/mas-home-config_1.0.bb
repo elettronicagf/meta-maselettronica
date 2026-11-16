@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=d41d8cd98f00b204e9800998ecf8427e"
 
 SRC_BRANCH = "iMX9-OSM-scarthgap"
 SRC_URI = "${BASE_URL}/repo-shared/bsp/config/mas-home-config.git;${BASE_PROTOCOL};branch=${SRC_BRANCH}"
-SRCREV = "46608499faf7fc380be9800b695ed889abd4f930"
+SRCREV = "2b7ea610ce73e4f76eda147a32d49cdb0fcfa069"
 
 S = "${WORKDIR}/git"
 
